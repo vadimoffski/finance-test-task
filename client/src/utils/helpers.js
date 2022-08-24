@@ -8,3 +8,5 @@ export const isTrend = (prev, next) => {
     return false
   }
 }
+
+export const timeHandler = (timeStamp) => (new Date(timeStamp).toLocaleTimeString())
