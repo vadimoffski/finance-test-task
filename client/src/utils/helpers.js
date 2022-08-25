@@ -4,9 +4,8 @@ export const isTrend = (prev, next) => {
   const nextValue = Number(next)
   if (nextValue >= prevValue) {
     return true
-  } else {
-    return false
   }
+  return false
 }
 
-export const timeHandler = (timeStamp) => (new Date(timeStamp).toLocaleTimeString())
+export const timeHandler = (timeStamp) => new Date(timeStamp).toLocaleTimeString()
