@@ -5,10 +5,21 @@ export const tickerSlice = createSlice({
   name: 'ticker',
   initialState: {
     data: [],
+    isOn: true,
+    time: 5000,
     status: null,
     error: null,
   },
   reducers: {
+
+    switcher: (state, action) => {
+      state.isOn = action.payload;
+    },
+
+    timeHandler: (state, action) => {
+      state.time = action.payload;
+    },
+
     pending: (state, action) => {
       state.status = 'loading';
       state.error = null;
@@ -27,6 +38,6 @@ export const tickerSlice = createSlice({
   },
 })
 
-export const { pending, fulfilled, rejected } = tickerSlice.actions
+export const { pending, fulfilled, rejected, timeHandler, switcher } = tickerSlice.actions
 
 export default tickerSlice.reducer
